@@ -8,6 +8,7 @@
 <script>
 import Login from './views/Login.vue'
 
+// 这个地方改了
 export default {
   name: 'App',
   components: {
