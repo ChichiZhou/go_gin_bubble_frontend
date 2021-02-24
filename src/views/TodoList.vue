@@ -74,7 +74,7 @@ export default {
     handleEdit(index, row) {
       let messageSuffix = row.status ? " 置为未完成" : " 置为已完成";
       this.axios
-        .put("/v1/todo/" + row.id, {
+        .put("http://localhost:9000/v1/todo/" + row.id, {
           status: !row.status
         })
         .then(() => {
@@ -88,7 +88,7 @@ export default {
         });
     },
     handleDelete(index, id) {
-      this.axios.delete("/v1/todo/" + id).then(() => {
+      this.axios.delete("http://localhost:9000/v1/todo/" + id).then(() => {
         this.tableData.splice(index, 1);
         this.$message({
           showClose: true,
@@ -101,7 +101,7 @@ export default {
     handleAdd() {
       if (this.newTitle != "") {
         this.axios
-          .post("/v1/todo", {
+          .post("http://localhost:9000/v1/todo", {
             title: this.newTitle
           })
           .then(() => {
