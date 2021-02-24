@@ -50,9 +50,10 @@ export default {
     };
   },
   // 页面加载时需要运行的代码
+  // 如果想要变成纯前端ping后端，这里的 url一定要写成后端的
   mounted() {
     this.axios
-    //.get("v1/todo")
+    //.get("v1/todo") 
       .get("http://localhost:9000/v1/todo")
       .then(response => (this.tableData = response.data));
   },
